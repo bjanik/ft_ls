@@ -6,13 +6,13 @@
 /*   By: bjanik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 15:25:19 by bjanik            #+#    #+#             */
-/*   Updated: 2017/03/05 00:39:43 by bjanik           ###   ########.fr       */
+/*   Updated: 2017/03/24 14:13:09 by bjanik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-/*void	display_list_first(t_dlist *dir)
+void	display_list_first(t_dlist *dir)
 {
 	t_dir	*p;
 
@@ -29,7 +29,7 @@
 		}
 	}
 }
-
+/*
 void	display_list_last(t_dlist *dir)
 {
 	t_dir	*p;
@@ -92,5 +92,6 @@ int	main(int argc, char **argv)
 	display_reg_files(list, max);
 	recursion(list, max);
 	free_list(list);
+	//while (42);
 	return (0);
 }

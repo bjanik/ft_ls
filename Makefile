@@ -6,7 +6,7 @@
 #    By: bjanik <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/08 10:54:38 by bjanik            #+#    #+#              #
-#    Updated: 2017/03/05 00:37:10 by bjanik           ###   ########.fr        #
+#    Updated: 2017/03/07 15:35:36 by bjanik           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = ft_ls
 
 CC = gcc
 
-FLAGS = -Wall -Wextra -Werror 
+FLAGS = -Wall -Wextra -Werror
 
 LIBFT = libft
 

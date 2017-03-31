@@ -6,7 +6,7 @@
 /*   By: bjanik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 15:17:41 by bjanik            #+#    #+#             */
-/*   Updated: 2017/03/05 00:39:38 by bjanik           ###   ########.fr       */
+/*   Updated: 2017/03/22 17:56:11 by bjanik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ char	g_options[6];
 typedef struct		s_dir
 {
 	char			*path;
+	char			*real_path;
 	DIR				*dir_stream;
 	struct dirent	*dir_content;
 	struct stat		stat;

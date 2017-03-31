@@ -6,7 +6,7 @@
 /*   By: bjanik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 14:10:13 by bjanik            #+#    #+#             */
-/*   Updated: 2017/03/05 00:39:44 by bjanik           ###   ########.fr       */
+/*   Updated: 2017/03/21 17:00:39 by bjanik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,5 +116,17 @@ void	append_file_list(t_dlist *list, struct dirent *dir_content, char *path)
 		list->last = list->last->next;
 	}
 	if (lstat(list->last->path, &(list->last->stat)) < 0)
-		perror("lstat");
+	{
+		perror("ls");
+		if (list->last == list->first)
+		{
+			ft_memdel((void**)&(list->last));
+			list->first = NULL;
+		}
+		else
+		{
+			list->last = list->last->previous;
+			ft_memdel((void**)&(list->last->next));
+		}
+	}
 }

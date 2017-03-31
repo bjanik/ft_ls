@@ -6,7 +6,7 @@
 /*   By: bjanik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 11:38:03 by bjanik            #+#    #+#             */
-/*   Updated: 2017/03/04 14:51:52 by bjanik           ###   ########.fr       */
+/*   Updated: 2017/03/22 16:19:51 by bjanik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ void	ascii_sort_after_time_sort(t_dlist *list)
 				if (dir->previous == NULL)
 					list->first = dir->next;
 				swap_nodes(dir, dir->next);
-				dir = list->first;
+			if (dir->previous && dir->previous->previous)
+				dir = dir->previous->previous;
 			}
 		}
 		dir = dir->next;
@@ -81,7 +82,7 @@ void	sort_time(t_dlist *list)
 {
 	t_dir	*dir;
 
-	if (list == NULL)
+	if (list == NULL || !list->first || !list->last)
 		return ;
 	dir = list->first;
 	while (dir->next)
@@ -91,7 +92,8 @@ void	sort_time(t_dlist *list)
 			if (dir->previous == NULL)
 				list->first = dir->next;
 			swap_nodes(dir, dir->next);
-			dir = list->first;
+			if (dir->previous && dir->previous->previous)
+				dir = dir->previous->previous;
 		}
 		else
 			dir = dir->next;
