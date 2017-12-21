@@ -20,9 +20,13 @@ ft_ls is the first project in the UNIX branch.
     -f : Output is not sorted.
     -G : Enable colors.
     -l : List in long format (ownership,user and groupe IDs, date/time, file size, name).
-    -o : List in logn format, but omits group ID.
+    -o : List in long format, but omits group ID.
     -R : Recursively list directories encountered.
     -r : List in a reverse order.
+    -S : Sort files by size.
+    -T : When used with -l option, display complete time information of the file (from year to minute).
+    -t : Sorted by time modified before sorting the operands by lexicographical order.
+    
     
 
 
