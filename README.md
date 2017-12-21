@@ -10,7 +10,7 @@ ft_ls is the first project in the UNIX branch.
 
 ## Usage
 
-./ft_ls [-Rarltdo] [files]
+./ft_ls [-AafdGlorRStT] [files]
 
 
 
