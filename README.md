@@ -12,6 +12,5 @@ ft_ls is the first project in the UNIX branch.
 
 ./ft_ls [-Rarltdo] [files]
 
-## Additional Options
 
 
