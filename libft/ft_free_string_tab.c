@@ -6,7 +6,7 @@
 /*   By: bjanik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/18 16:20:42 by bjanik            #+#    #+#             */
-/*   Updated: 2017/03/05 13:20:58 by bjanik           ###   ########.fr       */
+/*   Updated: 2017/04/05 21:37:06 by bjanik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ void	ft_free_string_tab(char **tab)
 	{
 		while (tab[i])
 		{
-			ft_memdel((void**)&tab[i]);
+			ft_strdel(&tab[i]);
 			i++;
 		}
+		ft_memdel((void**)&tab);
 	}
 }

@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_and_free.c                              :+:      :+:    :+:   */
+/*   handle_wildcard.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bjanik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/22 12:22:14 by bjanik            #+#    #+#             */
-/*   Updated: 2017/04/09 16:42:30 by bjanik           ###   ########.fr       */
+/*   Created: 2017/01/20 11:48:55 by bjanik            #+#    #+#             */
+/*   Updated: 2017/01/20 12:11:38 by bjanik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strjoin_and_free(char *s1, char *s2, int choice)
+void	handle_wildcard(t_arg *p, va_list ap)
 {
-	char	*str;
+	char	*s;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	if ((str = (char*)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)) == NULL)
-		return (NULL);
-	ft_strcpy(str, s1);
-	ft_strcat(str, s2);
-	if (choice == 1)
-		free(s1);
-	else if (choice == 2)
-		free(s2);
-	else if (choice == 3)
+	s = NULL;
+	p->width = va_arg(ap, int);
+	if (p->width < -1)
 	{
-		free(s1);
-		free(s2);
+		p->width = ft_abs(p->width);
+		if ((s = ft_strchr(p->flags, '0')) != NULL)
+			*s = '-';
+		else if (is_flag(p, '-') == 0)
+			p->flags[ft_strlen(p->flags)] = '-';
 	}
-	return (str);
 }

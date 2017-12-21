@@ -6,7 +6,7 @@
 /*   By: bjanik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 14:42:06 by bjanik            #+#    #+#             */
-/*   Updated: 2017/01/07 17:30:49 by bjanik           ###   ########.fr       */
+/*   Updated: 2017/01/02 16:55:30 by bjanik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,10 @@
 
 int	ft_putnchar(char c, int n)
 {
-	int	nb;
-
-	nb = n;
 	if (n > 0)
 	{
 		while (n--)
 			write(1, &c, 1);
-		return (nb);
 	}
-	return (0);
+	return (n);
 }

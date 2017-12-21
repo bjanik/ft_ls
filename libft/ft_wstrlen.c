@@ -6,7 +6,7 @@
 /*   By: bjanik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/23 19:01:31 by bjanik            #+#    #+#             */
-/*   Updated: 2017/01/09 15:55:14 by bjanik           ###   ########.fr       */
+/*   Updated: 2017/01/02 14:46:47 by bjanik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,10 @@ int	ft_wstrlen(wchar_t *str)
 	int	len;
 
 	len = 0;
-	if (str)
+	while (*str)
 	{
-		while (*str)
-		{
-			len += ft_wchar_len(*str);
-			str++;
-		}
+		len += ft_wchar_len(*str);
+		str++;
 	}
 	return (len);
 }

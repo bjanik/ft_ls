@@ -6,7 +6,7 @@
 /*   By: bjanik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 18:34:38 by bjanik            #+#    #+#             */
-/*   Updated: 2017/01/11 16:09:23 by bjanik           ###   ########.fr       */
+/*   Updated: 2016/12/21 15:19:31 by bjanik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ static int	ft_nb_digit(unsigned long long n)
 	int	digit;
 
 	digit = 0;
-	if (n == 0)
-		return (1);
 	while (n)
 	{
 		n /= 10;

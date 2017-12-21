@@ -6,7 +6,7 @@
 #    By: bjanik <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 16:52:33 by bjanik            #+#    #+#              #
-#    Updated: 2017/02/17 20:22:46 by bjanik           ###   ########.fr        #
+#    Updated: 2017/04/06 13:46:34 by bjanik           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,6 @@ SRCS = ft_putstr.c \
 	   ft_itoa_base_llu.c \
 	   ft_itoa_base_umax.c \
 	   ft_strdup.c \
-	   ft_wstrdup.c \
 	   ft_strcpy.c \
 	   ft_strncpy.c \
 	   ft_strcat.c \
@@ -93,18 +92,34 @@ SRCS = ft_putstr.c \
 	   ft_putnbr_base.c \
 	   ft_nb_digit_base.c \
 	   ft_nb_digit_base_umax.c \
-	   get_next_line.c \
-	   ft_display_string_tab.c \
 	   ft_free_string_tab.c \
+	   get_next_line.c \
 	   ft_ischar.c \
+	   handle_arg.c \
+	   handle_flags.c \
+	   handle_chain_list.c \
+	   handle_precision_width.c \
+	   handle_wildcard.c \
+	   init.c \
+	   parsing.c \
+	   parsing_flags.c \
+	   ft_printf.c \
+	   convert_binary.c \
+	   convert_decimal.c \
+	   convert_string_char.c \
+	   convert_hexa_octal.c \
+	   convert_unsigned.c \
+	   errors.c \
+	   error_messages.c \
+	   flags.c \
 	   ft_abs.c \
+	   print.c \
+	   print_wchar.c \
+	   ft_valid_file.c \
 
 OBJ = $(SRCS:.c=.o)
 RM = rm -f
 all : $(NAME)
-
-$(OBJ)%.o : $(SRC)%.c
-	@$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME) :
 	@$(CC) $(CFLAGS) $(SRCS)

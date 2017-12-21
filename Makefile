@@ -6,7 +6,7 @@
 #    By: bjanik <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/08 10:54:38 by bjanik            #+#    #+#              #
-#    Updated: 2017/03/07 15:35:36 by bjanik           ###   ########.fr        #
+#    Updated: 2017/04/10 20:22:49 by bjanik           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,19 +23,23 @@ LIB = libft/libft.a
 HEADER = includes
 
 SRCS = srcs/main.c \
+	   srcs/errors.c \
 	   srcs/display.c \
 	   srcs/ft_ls.c \
-	   srcs/init.c \
+	   srcs/linked_list.c \
 	   srcs/parsing.c \
 	   srcs/handle_l_option.c \
 	   srcs/rights.c \
-	   srcs/sort.c \
+	   srcs/merge_sort.c \
+	   srcs/max.c \
+	   srcs/links.c \
+	   srcs/options.c \
 
 all : $(NAME)
 
 $(NAME) :
 	make -C $(LIBFT)
-	$(CC) $(FLAGS) $(SRCS) $(LIB) -I $(HEADER) -o $(NAME)
+	$(CC) $(FLAGS) $(SRCS) $(LIB) -I $(HEADER) -I $(LIBFT) -o $(NAME)
 
 clean :
 	make clean -C $(LIBFT)

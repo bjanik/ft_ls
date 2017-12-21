@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_and_free.c                              :+:      :+:    :+:   */
+/*   max.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bjanik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/22 12:22:14 by bjanik            #+#    #+#             */
-/*   Updated: 2017/04/09 16:42:30 by bjanik           ###   ########.fr       */
+/*   Created: 2017/04/09 16:59:44 by bjanik            #+#    #+#             */
+/*   Updated: 2017/04/11 11:03:41 by bjanik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_ls.h"
 
-char	*ft_strjoin_and_free(char *s1, char *s2, int choice)
+void	init_max(t_max *max)
 {
-	char	*str;
+	max->max_group_name = 0;
+	max->max_user_name = 0;
+	max->max_nlinks = 0;
+	max->max_size = 0;
+	max->total_blocks = 0;
+}
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	if ((str = (char*)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)) == NULL)
-		return (NULL);
-	ft_strcpy(str, s1);
-	ft_strcat(str, s2);
-	if (choice == 1)
-		free(s1);
-	else if (choice == 2)
-		free(s2);
-	else if (choice == 3)
+t_max	*malloc_max(void)
+{
+	t_max	*max;
+
+	if ((max = (t_max*)malloc(sizeof(t_max))) == NULL)
 	{
-		free(s1);
-		free(s2);
+		perror("malloc");
+		exit(-1);
 	}
-	return (str);
+	init_max(max);
+	return (max);
 }

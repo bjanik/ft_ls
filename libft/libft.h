@@ -6,7 +6,7 @@
 /*   By: bjanik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 16:51:57 by bjanik            #+#    #+#             */
-/*   Updated: 2017/02/17 20:21:38 by bjanik           ###   ########.fr       */
+/*   Updated: 2017/04/09 16:45:20 by bjanik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,21 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdarg.h>
+# include <sys/stat.h>
+
+# define BLK "\x1B[30m"
+# define RED "\x1B[31m"
+# define GRN   "\x1B[32m"
+# define YEL   "\x1B[33m"
+# define BLU   "\x1B[34m"
+# define MAG   "\x1B[35m"
+# define CYN   "\x1B[36m"
+# define WHT   "\x1B[37m"
+# define BACK_GRN   "\x1B[42m"
+# define BACK_YEL   "\x1B[43m"
+# define BACK_CYN   "\x1B[46m"
+# define BOLD_CYAN  "\x1B[1m\033[36m"
+# define RESET "\x1B[0m"
 
 typedef struct		s_list
 {
@@ -50,7 +65,6 @@ size_t				ft_strlen(const char *s);
 int					ft_wstrlen(wchar_t *str);
 int					ft_wchar_len(wchar_t c);
 char				*ft_strdup(const char *s1);
-wchar_t				*ft_wstrdup(wchar_t *str);
 char				*ft_strndup(const char *s1, size_t n);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
@@ -95,8 +109,8 @@ char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(long long n);
 char				*ft_itoa_llu(unsigned long long n);
 char				*ft_itoa_base(long long value, char *base);
-char				*ft_itoa_base_umax(uintmax_t value, char *base);
 char				*ft_itoa_base_llu(unsigned long long value, char *base);
+char				*ft_itoa_base_umax(uintmax_t value, char *base);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void(*del)(void *, size_t));
@@ -105,8 +119,9 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_swap(void *a, void *b);
 int					ft_nb_digit_base(long long n, int base);
-int					ft_nb_digit_base_umax(uintmax_t n, int base);
-void				ft_display_string_tab(char **tab);
-void				ft_free_string_tab(char **tab);
 int					ft_abs(int i);
+void				ft_free_string_tab(char **tab);
+int					ft_valid_file(char *path);
+int					ft_printf(const char *format, ...);
+
 #endif
