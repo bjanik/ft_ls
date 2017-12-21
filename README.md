@@ -8,7 +8,7 @@ Grade: 108/100
 
 ft_ls is the first project in the UNIX branch. 
 
-## Usage
+### Usage
 
 ./ft_ls [-AadfGlorRStT] [files]
 
